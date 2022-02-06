@@ -1,0 +1,16 @@
+-- aplicar gitflow
+
+-- configurar protecao de branchs
+
+-- trabalhar com pull requests
+
+-- code review ?!
+
+-- SemVer - padronizar o versionamento do projeto
+
+
+-- inicializando uma feature
+	git flow feature start nome_feature
+
+-- finalizando uma feature
+	git flow feature finish nome_feature	
