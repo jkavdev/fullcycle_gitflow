@@ -10,9 +10,17 @@
 
 
 --GIT FLOW
+- LINKS
+- https://stackoverflow.com/questions/13887454/git-flow-releasing-selected-features
+
+- CONCEITOS
 -- quando finalizando uma feature com apenas um commit, o git flow apenas realiza o fast forward na develop
 	nao criando o commit de merge
 -- mas quando a feature possui mais de um commit, o git flow realiza fast forward e no final cria o comando de merge da feature
+
+--- podemos manter este comportamento, pois se precisarmos reverte uma feature com apenas um commit, como a feature tem apenas um commit
+--- precisamos apenas reverter o commit em questao
+--- se a feature possui varios commits, como o git flow criou o commit de merge, soh precisamos reverter o commit de merge
 
 
 -- removendo todos os arquivos do staged
@@ -22,10 +30,4 @@
 	git flow feature start nome_feature
 
 -- finalizando uma feature
-	git flow feature finish nome_feature	
-
--- finalizando uma feature
-	git flow feature finish nome_feature		
-
--- finalizando uma feature
-	git flow feature finish nome_feature		
+	git flow feature finish nome_feature
