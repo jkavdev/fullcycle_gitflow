@@ -22,6 +22,14 @@
 --- precisamos apenas reverter o commit em questao
 --- se a feature possui varios commits, como o git flow criou o commit de merge, soh precisamos reverter o commit de merge
 
+<<<<<<< HEAD
+--- se uma feature nao deve subir para producao, entao ela nao deve ir para a develop
+--- e se uma feature for impedida de subir para producao no ultimo momento, quando ja estiver dentro da release?
+--- se formos jogar a develop na feature, pode ser que tenha alguma feature que nao deva sabir agora na release
+--- mas todas as features na develop, nao quer dizer que ela ja eh candidata a subir na proxima release?
+
+=======
+>>>>>>> master
 
 -- removendo todos os arquivos do staged
 	git restore --staged .
@@ -30,6 +38,9 @@
 	git flow feature start nome_feature
 
 -- finalizando uma feature
+<<<<<<< HEAD
+	git flow feature finish nome_feature
+=======
 	git flow feature finish nome_feature
 
 -- finalizando uma feature
@@ -37,3 +48,4 @@
 
 -- finalizando uma feature
 	git flow feature finish nome_feature		
+>>>>>>> master
