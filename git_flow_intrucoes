@@ -9,6 +9,9 @@
 -- SemVer - padronizar o versionamento do projeto
 
 
+-- removendo todos os arquivos do staged
+	git restore --staged .
+
 -- inicializando uma feature
 	git flow feature start nome_feature
 
