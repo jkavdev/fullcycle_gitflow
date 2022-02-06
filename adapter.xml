@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mfp:adapter name="Apphabitacao_agencia_habitacao_v1_0_0_ra"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mfp="http://www.ibm.com/mfp/integration"
+	xmlns:http="http://www.ibm.com/mfp/integration/http">
+
+    <displayName>Apphabitacao_agencia_habitacao_v1_0_0_ra</displayName>
+    <description>Adapter que retorna os dados do token</description>
+
+    <JAXRSApplicationClass>br.gov.caixa.habitacao.adapter.AgenciasApplication</JAXRSApplicationClass>
+
+	<property name="API_PROTOCOL" displayName="Protocolo utilizado na API" defaultValue="https" type="['https','http']" />
+	<property name="API_HOST" displayName="Host da API" defaultValue="api.caixa" type="['api.caixa','api.des.caixa']" />
+	<property name="API_PORT" displayName="Porta da API" defaultValue="8443" type="integer" />
+	<property name="API_BASE_PATH" displayName="Path base da API" defaultValue="/habitacao/originacao" type="string" />
+	<property name="API_KEY" displayName="Chave da API no API Manager" defaultValue="l7xx17408fdee11c4cb9bf4d8e822a3c77f1" type="string" />
+	<property name="CHARSET" displayName="CHARSET padrão de envio de mensagem, e padrão para resposta quando não configurado na API (ex: UTF-8)" defaultValue="UTF-8" type="string" />
+	<property name="CONTENT_TYPE" displayName="Content-Type padrão de envio de mensagem, e padrão para resposta quando não configurado na API (ex: application/json)" defaultValue="application/json" type="string" />
+	<property name="LOG_FILE_CONFIGURATION" displayName="Arquivo de configuração de log" defaultValue="C:/Users/jkavdev/Documents/logs_adapter/originacao-log4j.xml" type="string" />
+	<property name="TIMEOUT" displayName="Timeout da transação em milisegundos" defaultValue="30000" type="integer" />
+	<property name="TIMEOUT_CONNECT" displayName="Tempo limite de abertura de conexão em milisegundos" defaultValue="30000" type="integer" />
+	<property name="TIMEOUT_CONNECTION" displayName="Tempo limite de solicitação de conexão em milisegundos" defaultValue="30000" type="integer" />
+
+</mfp:adapter>
