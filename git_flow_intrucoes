@@ -31,3 +31,6 @@
 
 -- finalizando uma feature
 	git flow feature finish nome_feature
+
+-- finalizando uma feature
+	git flow feature finish nome_feature	
