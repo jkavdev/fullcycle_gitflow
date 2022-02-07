@@ -39,6 +39,15 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 -- copiando a chave gerada
 	cat ~/.ssh/id_rsa.pub
 
+--GIT
+-- mudar para https ou ssh
+	git remote set-url origin git@bitbucket.org:tutorials/tutorials.git	
+
+-- ver apontamentos do repositorio
+	git remote -v	
+
+-- 	
+
 
 --GIT FLOW
 - LINKS
