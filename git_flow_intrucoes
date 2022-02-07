@@ -37,6 +37,19 @@ https://zimmergren.net/using-third-party-terminals-within-windows-terminal/
 	git config commit.gpgsign true	 
 	git config tag.gpgSign true
 
+-- adicionando um segunda conta a chave gpg
+	gpg --edit-key D59E2F4522F9A5BF
+	-- adicionando a segunda conta
+		adduid
+	-- selecionando a conta
+		uid 2
+	-- tornando a conta confiavel
+		trust
+	-- salvando as alteracoes
+		save
+		
+-- como selecionar uma conta da chave gpg		
+
 --SSH KEY
 https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboard
 
