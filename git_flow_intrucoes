@@ -30,6 +30,13 @@ https://zimmergren.net/using-third-party-terminals-within-windows-terminal/
 -- exportando a chave criada
 	gpg --armor --export D59E2F4522F9A5BF/ID_CHAVE | clip/pbcopy-copia_a_chave
 
+-- configurando a chave criada com o usuario
+	 git config user.signingkey D59E2F4522F9A5BF/ID_CHAVE	
+
+-- assinando os commit
+	git config commit.gpgsign true	 
+	git config tag.gpgSign true
+
 --SSH KEY
 https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboard
 
@@ -46,7 +53,10 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 -- ver apontamentos do repositorio
 	git remote -v	
 
--- 	
+-- ver diferenca do arquivo
+	git diff
+-- ver a diferenca entre commit
+	git diff sha1 sha2
 
 
 --GIT FLOW
