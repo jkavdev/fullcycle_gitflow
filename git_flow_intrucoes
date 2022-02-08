@@ -104,9 +104,3 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 
 -- finalizando uma feature
 	git flow feature finish nome_feature
-
--- finalizando uma feature
-	git flow feature finish nome_feature
-
--- finalizando uma feature
-	git flow feature finish nome_feature
