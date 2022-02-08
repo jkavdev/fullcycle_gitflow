@@ -48,6 +48,9 @@ https://zimmergren.net/using-third-party-terminals-within-windows-terminal/
 	-- salvando as alteracoes
 		save
 
+-- se subiu algum commit nao assinado
+	https://webdevstudios.com/2020/05/26/retroactively-sign-git-commits/		
+
 -- como selecionar uma conta da chave gpg		
 
 --SSH KEY
