@@ -37,19 +37,6 @@ https://zimmergren.net/using-third-party-terminals-within-windows-terminal/
 	git config commit.gpgsign true	 
 	git config tag.gpgSign true
 
--- adicionando um segunda conta a chave gpg
-	gpg --edit-key D59E2F4522F9A5BF
-	-- adicionando a segunda conta
-		adduid
-	-- selecionando a conta
-		uid 2
-	-- tornando a conta confiavel
-		trust
-	-- salvando as alteracoes
-		save
-
--- como selecionar uma conta da chave gpg		
-
 --SSH KEY
 https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboard
 
@@ -95,9 +82,6 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 --- e se uma feature for impedida de subir para producao no ultimo momento, quando ja estiver dentro da release?
 --- se formos jogar a develop na feature, pode ser que tenha alguma feature que nao deva sabir agora na release
 --- mas todas as features na develop, nao quer dizer que ela ja eh candidata a subir na proxima release?
-
--- configurar a branch principal do repositorio develop, para que as operacoes sejam feitas nela, e nao na master
--- proteger develop e master, para certos grupo ou usuarios, restringir o acesso para alguns usuarios
 
 =======
 
