@@ -44,7 +44,13 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 	ssh-keygen
 
 -- copiando a chave gerada
-	cat ~/.ssh/id_rsa.pub
+	cat ~/.ssh/id_rsa.pub - gera no console
+	clip < ~/.ssh/id_rsa.pub - copia para a area de transferencia
+
+--PULL REQUEST TEMPLATE	
+-- configurar um template para os pull request, seguir os passos do link:
+	https://embeddedartistry.com/blog/2017/08/04/a-github-pull-request-template-for-your-projects/
+
 
 --GIT
 -- mudar para https ou ssh
