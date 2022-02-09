@@ -67,6 +67,21 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 -- configurar um template para os pull request, seguir os passos do link:
 	https://embeddedartistry.com/blog/2017/08/04/a-github-pull-request-template-for-your-projects/
 
+--SEMVER
+-- aplicando a especificacao de versionamento do projeto
+	https://semver.org/	
+
+--CONVENTIONAL COMMITS
+-- padronizando as mensagens dos commits	
+	https://www.conventionalcommits.org/en/v1.0.0/
+
+-- se a versao minor for incrementada, o valor do patch sera resetado para 0
+-- se a versao major for incrementada, o valor do da minor e patch sera resetado para 0
+-- quando comecar o projeto, indicado comecar com 0.1.0
+-- quando o projeto for pra producao 1.0.0
+-- quando acontecer uma depreciacao do uma funcionalidade, deve lancar uma versao minor com a depreciacao
+	--- e depois uma versao major, removendo a funcionalidade depreciada, dando ao clientes tempo para a transicao
+
 
 --GIT
 -- mudar para https ou ssh
@@ -98,6 +113,9 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 --- e se uma feature for impedida de subir para producao no ultimo momento, quando ja estiver dentro da release?
 --- se formos jogar a develop na feature, pode ser que tenha alguma feature que nao deva sabir agora na release
 --- mas todas as features na develop, nao quer dizer que ela ja eh candidata a subir na proxima release?
+
+-- configurar a branch principal do repositorio develop, para que as operacoes sejam feitas nela, e nao na master
+-- proteger develop e master, para certos grupo ou usuarios, restringir o acesso para alguns usuarios
 
 =======
 
