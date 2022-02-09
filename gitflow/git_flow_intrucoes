@@ -75,6 +75,16 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 -- padronizando as mensagens dos commits	
 	https://www.conventionalcommits.org/en/v1.0.0/
 
+-- testando o commitlint
+	echo fix: send cors headers' | npx commitlint
+
+-- instalando o hook do husky que valida os commits
+	 husky add C:/Users/jkavdev/repo/local/fullcycle/git/.husky/commit-msg "npx commitlint --edit $1"	
+-- se o comando acima nao funcionar cria o arquivo com o comando dentro dele
+	commit-msg -> 
+		#!/bin/sh
+		npx commitlint --edit $1
+
 -- se a versao minor for incrementada, o valor do patch sera resetado para 0
 -- se a versao major for incrementada, o valor do da minor e patch sera resetado para 0
 -- quando comecar o projeto, indicado comecar com 0.1.0

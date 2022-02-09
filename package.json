@@ -9,6 +9,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "husky": {
+    "hooks": {
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jkavdev/maratona_fullcycle.git"
