@@ -1,0 +1,37 @@
+FROM php:7.4-cli AS builder
+
+WORKDIR /var/www
+
+RUN apt-get update && \
+    apt-get install libzip-dev -y && \
+    docker-php-ext-install zip
+
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');"
+
+RUN php composer.phar create-project --prefer-dist laravel/laravel laravel
+
+# iniciando processo de producao com php fpm
+FROM php:7.4-fpm-alpine
+
+# criando diretorio de trabalho
+WORKDIR /var/www
+
+# removendo todo a pasta html
+RUN rm -rf /var/www/html
+
+# copiando os arquivos que foram gerados pelo processo de build
+COPY --from=builder /var/www/laravel .
+
+# criando um link simbolico para html
+RUN ln -s public html
+
+# dando permissao ao linux para escrever no diretorio 
+RUN chown -R www-data:www-data /var/www
+
+# expondo a porta 9000 que roda o projeto
+EXPOSE 9000
+
+# executa o php
+CMD [ "php-fpm" ]
