@@ -114,7 +114,7 @@
 
 * [repositorio da imagem docker desafio go](https://hub.docker.com/repository/docker/jkavdev/codeeducation)
 
-* [Dockerfile do desafio go](https://hub.docker.com/repository/docker/jkavdev/codeeducation)
+* [Dockerfile do desafio go](https://github.com/jkavdev/maratona_fullcycle/blob/feature/readme-docker/docker/Dockerfile_desafio_go)
 
 * rodando o container da imagem do desafio go
 
