@@ -24,7 +24,7 @@ ENTRYPOINT [ "php","laravel/artisan","serve" ]
 # o comando serve do artisan, pode receber o host do aplicacao
 # porque por padrao ele rodara 127.0.0.1:8000
 # ai mudamos para localhost
-# CMD [ "--host=0.0.0.0" ]
+CMD [ "--host=0.0.0.0" ]
 
 # rodando o container
 # docker run --rm --name laravel -d -p 8000:8000 laravel

@@ -1,0 +1,11 @@
+FROM nginx:1.15.0-alpine
+
+# removendo as configuracoes padroes do nginx
+RUN rm /etc/nginx/conf.d/default.conf
+
+# copiando o arquivo de configuracao do projeto
+COPY nginx.conf /etc/nginx/conf.d
+
+# criando arquivo em branco inicial
+# pois o nginx ira requisitalo uma primeira vez, e esse arquivo deve existir, nem que esteja em branco
+RUN mkdir /var/www/html -p && touch /var/www/html/index.php

@@ -108,13 +108,24 @@
 
     `docker build -t laravel -f docker/Dockerfile_php docker`
 
+* removendo todos os container forcados
+
+    `docker rm -f $(docker ps -a -q)`
+
+* remocao de objetos docker: https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes-pt    
+
+* algumas imagens do docker nao tem o bash nas variaveis de ambiente, ai eh necessario indicar o local do `bash`
+
+    `docker exec -it <container-id> /bin/sh`
+
 # Docker - Desafios
 ## Docker - Desafio Go
 * foi criado uma imagem que compila o arquivo ``go``, e outro ``estagio`` que copia os arquivos compilados, a partir da menor imagem possivel do docker `scratch`, pois os arquivos gerados apos a compilacao do ``go`` sao executaveis, precisando apenas do basico do linux para serem executados
 
 * [repositorio da imagem docker desafio go](https://hub.docker.com/repository/docker/jkavdev/codeeducation)
 
+* [Dockerfile do desafio go](https://github.com/jkavdev/maratona_fullcycle/blob/feature/readme-docker/docker/Dockerfile_desafio_go)
+
 * rodando o container da imagem do desafio go
 
     `docker run --rm jkavdev/codeeducation`
-
