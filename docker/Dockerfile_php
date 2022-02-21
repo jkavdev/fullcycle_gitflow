@@ -1,0 +1,33 @@
+# imagem do php
+FROM php:7.4-cli
+
+# criando a pasta de trabalho do projeto
+WORKDIR /var/www
+
+# atualizando os pacotes
+# instalando um plugin que faz com que ao criar um projeto laravel nao necessite do token do github
+RUN apt-get update && \
+    apt-get install libzip-dev -y && \
+    docker-php-ext-install zip
+
+# instalando o composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');"
+
+# criando o projeto laravel com o composer
+RUN php composer.phar create-project --prefer-dist laravel/laravel laravel
+
+# aciona o artisan cli do laravel, para subir um servidor na pasta do projeto
+ENTRYPOINT [ "php","laravel/artisan","serve" ]
+
+# o comando serve do artisan, pode receber o host do aplicacao
+# porque por padrao ele rodara 127.0.0.1:8000
+# ai mudamos para localhost
+# CMD [ "--host=0.0.0.0" ]
+
+# rodando o container
+# docker run --rm --name laravel -d -p 8000:8000 laravel
+
+# mudando a porta para 8001
+# docker run --rm --name laravel -d -p 8001:8001 laravel --host=0.0.0.0 --port=8001
