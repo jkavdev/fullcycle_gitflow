@@ -1,0 +1,20 @@
+# menor imagem do go disponivel e criando um apelido para ela
+FROM golang:alpine as builder
+
+# criando diretorio de trabalho da imagem
+WORKDIR /app
+
+# criando arquivo go para o diretorio atual, no caso /app
+COPY main.go .
+
+# rodando um comando go para compilar o arquivo
+RUN go build main.go
+    
+# criando uma imagem, a partir da mais simples possivel
+FROM scratch
+
+# copiando o conteudo do app
+COPY --from=builder /app/ .
+
+# sempre sera executado o arquivo compilado, main
+ENTRYPOINT [ "./main" ]

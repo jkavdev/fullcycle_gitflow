@@ -85,12 +85,19 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 		#!/bin/sh
 		npx commitlint --edit $1
 
+-- tentando o ultimo commit do projeto
+	npx commitlint --from HEAD~1 --to HEAD --verbose		
+
+--COMMITZEN
+-- adicionando o commitzen para padronizar o commit, no momento do commit
+	npm install -g commitizen
+
 -- se a versao minor for incrementada, o valor do patch sera resetado para 0
 -- se a versao major for incrementada, o valor do da minor e patch sera resetado para 0
 -- quando comecar o projeto, indicado comecar com 0.1.0
 -- quando o projeto for pra producao 1.0.0
 -- quando acontecer uma depreciacao do uma funcionalidade, deve lancar uma versao minor com a depreciacao
-	--- e depois uma versao major, removendo a funcionalidade depreciada, dando ao clientes tempo para a transicao
+	--- e depois uma versao major, removendo a funcionalidade depreciada, dando ao clientes tempo para a transicao	
 
 
 --GIT
@@ -126,6 +133,8 @@ https://stackoverflow.com/questions/16638092/copying-a-rsa-public-key-to-clipboa
 
 -- configurar a branch principal do repositorio develop, para que as operacoes sejam feitas nela, e nao na master
 -- proteger develop e master, para certos grupo ou usuarios, restringir o acesso para alguns usuarios
+
+-- implementar ferramenta para validar os commits que ja foram commitados - commitsar
 
 =======
 

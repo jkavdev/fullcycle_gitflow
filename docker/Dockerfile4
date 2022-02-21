@@ -1,0 +1,21 @@
+FROM golang
+
+# comando que sera executado, no caso sera executado um echo com texto
+# CMD [ "echo", "hello world" ]
+
+# eh um comando fixo que sera executado
+ENTRYPOINT [ "echo", "hello " ]
+
+# tudo definido no cmd neste ponto, sera enviado como argumento para o ENTRYPOINT
+# ficaria ENTRYPOINT [ "echo", "hello ", "world" ]
+CMD [ "world" ]
+
+# ao criar o container passando um argumento
+# o argumento definido no cmd sera substituido pelo argumento no momento de rodar o container
+# CMD [ "world" ]
+
+# docker run --rm teste
+# sera exibido no console `hello world`
+
+# docker run --rm teste aklsjdkj
+# sera exibido no console `hello aklsjdkj`
