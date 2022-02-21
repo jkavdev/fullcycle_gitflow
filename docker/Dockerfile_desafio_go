@@ -4,7 +4,7 @@ FROM golang:alpine as builder
 # criando diretorio de trabalho da imagem
 WORKDIR /app
 
-# criando arquivo go para o diretorio atual, no caso /app
+# copiando arquivo go para o diretorio atual, no caso /app
 COPY main.go .
 
 # rodando um comando go para compilar o arquivo
