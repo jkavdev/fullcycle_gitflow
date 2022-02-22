@@ -1,0 +1,10 @@
+FROM nginx
+
+# define o diretorio atual para os comandos rodados abaixo
+WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install vim -y
+
+# copiando um arquivo ou diretorio para o container
+COPY index.html /usr/share/nginx/html

@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  db:
+    build: 
+      context: .
+      dockerfile: Dockerfile_mysql
+    container_name: db
+    restart: always
+    tty: true
+    # por algum motivo, quando informado o volume, o processo de definir a tabela nao eh executado
+    # volumes:
+    #   - C:\Users\jkavdev\Documents\docker\mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=nodedb
+    networks:
+      - mysqlnet
+
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile_node
+    # utilizando o dockerize para esperar o container do banco para subir o container do app
+    entrypoint: dockerize --wait tcp://db:3306 -timeout 10s docker-entrypoint.sh node index.js
+    container_name: app
+    tty: true
+    volumes:
+      - .\app:/usr/src/app
+    networks:
+      - mysqlnet
+    depends_on:
+      - db
+
+  proxy:
+    build: 
+      context: .
+      dockerfile: Dockerfile_nginx
+    # precisariamos alterar a imagem, pois na imagem base do nginx nao tem apt-get
+    # entrypoint: dockerize --wait tcp://app:3000 -timeout 10s docker-entrypoint.sh
+    container_name: proxy
+    ports:
+      - "8080:80"
+    networks:
+      - mysqlnet
+
+networks:
+  mysqlnet:
+    name: mysqlnet
+    driver: bridge      

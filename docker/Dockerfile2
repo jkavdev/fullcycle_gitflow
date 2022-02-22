@@ -1,0 +1,9 @@
+# definindo a base da imagem, no caso a partir da imagem ngnix
+FROM nginx
+
+# rodando um comando, no caso atualizando os pacotes do linux, 
+# para que no proximo passo seja possivel instalar outros pacotes
+RUN apt-get update
+
+# instalando o vim
+RUN apt-get install vim -y

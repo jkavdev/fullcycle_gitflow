@@ -1,0 +1,7 @@
+FROM nginx:1.15.0-alpine
+
+# remove o arquivo de configuracao padrao
+RUN rm /etc/nginx/conf.d/default.conf
+
+# copia o arquivo de configuracao da aplicacao
+COPY ./nginx_conf/nginx.conf /etc/nginx/conf.d
