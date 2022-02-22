@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  laravel:
+    # podemos especificar docker file para trabalhar, em vez de uma imagem
+    build: 
+      # define a pasta onde esta dockerfile
+      context: .
+      # nome do dockerfile
+      dockerfile: Dockerfile_php_prod
+    # se quisemos trablhar com o nome da imagem, sem o contexto de build, apenas informar o nome da imagem
+    # image: phplaravel:prod
+
+    # nome da imagem
+    container_name: laravel
+
+    # definindo as redes
+    networks:
+      - laranet
+
+  nginx:
+    build: 
+        context: .
+        dockerfile: Dockerfile_nginx_prod
+    # image: nginxlaravel:prod
+    networks:
+      - laranet
+
+    # definindo as exposicao de portas
+    ports:
+      - "8080:80"
+
+networks:
+  # criando a rede do tipo bridge
+  laranet:
+    driver: bridge
