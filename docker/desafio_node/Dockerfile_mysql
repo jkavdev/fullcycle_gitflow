@@ -1,0 +1,8 @@
+FROM mysql:5.7
+
+# dump que cria a estrutura do banco, no caso, cria a tabela people
+COPY ./dbinit/dump.sql /docker-entrypoint-initdb.d
+
+# setando as variaveis de ambiente necessarias para a criacao da imagem
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=nodedb

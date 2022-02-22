@@ -120,6 +120,8 @@
 
 # Docker - Desafios
 ## Docker - Desafio Go
+* [Desafio Go](https://plataforma.fullcycle.com.br/courses/184/168/110/conteudos?projeto=51&fase=248)
+
 * foi criado uma imagem que compila o arquivo ``go``, e outro ``estagio`` que copia os arquivos compilados, a partir da menor imagem possivel do docker `scratch`, pois os arquivos gerados apos a compilacao do ``go`` sao executaveis, precisando apenas do basico do linux para serem executados
 
 * [repositorio da imagem docker desafio go](https://hub.docker.com/repository/docker/jkavdev/codeeducation)
@@ -129,3 +131,6 @@
 * rodando o container da imagem do desafio go
 
     `docker run --rm jkavdev/codeeducation`
+
+## Docker - Desafio Nginx com Node.js
+* [Desafio Nginx com Node.js](https://plataforma.fullcycle.com.br/courses/184/168/110/conteudos?projeto=51&fase=249)

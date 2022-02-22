@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - C:\Users\jkavdev\Documents\docker\mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=nodedb
+    networks:
+      - mysqlnet
+
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile_node
+    container_name: app
+    tty: true
+    volumes:
+      - C:\Users\jkavdev\Documents\docker\mysql\app:/usr/src/app
+    networks:
+      - mysqlnet
+    ports:
+      - "3000:3000"
+
+networks:
+  mysqlnet:
+    driver: bridge      
