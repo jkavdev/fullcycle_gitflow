@@ -29,7 +29,7 @@ function configure() {
         connection.query('select * from people', (_, result) => {
             NAMES = result.map(({ name }) => name)
 
-            let html = '<h1>names</h1>'
+            let html = '<h1>Full Cycle Rocks!</h1>'
             html += nameList(NAMES)
             response.send(html)
         })
