@@ -16,13 +16,16 @@ jobs:
     # escolhendo o ambiente da action
     runs-on: ubuntu-latest
     # escolhendo as acoes
+    strategy: 
+      matrix: 
+        go: ["1.14", "1.15"]
     steps: 
       # acao de realizar o checkout do codigo no ambiente da action
       - uses: actions/checkout@v2
       # realiza a configuracao do ambiente GO
       - uses: actions/setup-go@v2
         with: 
-          go-version: 1.15
+          go-version: ${{matrix.go}}
       # rodando os testes
       - run : go test ./ci/app
       # rodando a aplicacao
